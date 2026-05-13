@@ -207,7 +207,7 @@
 
     <div class="vis-section">
       <h3>Dial face preview &mdash; lines radiate from the gnomon base at the center</h3>
-      <svg id="dialSvg" viewBox="0 0 520 400"></svg>
+      <svg id="dialSvg" viewBox="0 0 600 520"></svg>
     </div>
 
     <div class="how-it-works">
@@ -292,7 +292,7 @@
   function drawDial(lat, angles) {
     const svg = document.getElementById('dialSvg');
     svg.innerHTML = '';
-    const cx = 260, cy = 210, r = 200;
+    const cx = 300, cy = 240, r = 200;
 
     function el(tag, attrs) {
       const e = document.createElementNS('http://www.w3.org/2000/svg', tag);
@@ -359,12 +359,12 @@
 
     const legend = [
       ['#1d4ed8', 'AM hours (west side)', 20],
-      ['#b45309', 'PM hours (east side)', 175],
-      ['#b8860b', 'Noon line', 330],
+      ['#b45309', 'PM hours (east side)', 215],
+      ['#b8860b', 'Noon line', 410],
     ];
     legend.forEach(([c, lbl, x]) => {
-      svg.appendChild(el('rect', { x, y: 375, width: 10, height: 10, fill: c, rx: 2 }));
-      const t = el('text', { x: x + 14, y: 383, fill: '#666', 'font-size': '11', 'font-family': 'Libre Baskerville, serif' });
+      svg.appendChild(el('rect', { x, y: 465, width: 10, height: 10, fill: c, rx: 2 }));
+      const t = el('text', { x: x + 14, y: 473, fill: '#666', 'font-size': '11', 'font-family': 'Libre Baskerville, serif' });
       t.textContent = lbl;
       svg.appendChild(t);
     });
